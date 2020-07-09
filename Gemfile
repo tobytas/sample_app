@@ -7,6 +7,8 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 
+gem 'bootstrap-sass'
+
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
@@ -31,18 +33,25 @@ group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~> 1.4'
 
+  # Colored console
+  gem 'win32console' if Gem.win_platform?
+
   gem 'spring'
 end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
+
+  gem 'guard'
+  gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 end
 
 group :test do
   gem 'minitest-reporters'
   gem 'mini_backtrace'
   gem 'guard-minitest'
+  gem 'rails-controller-testing'
 end
 
 group :production do
